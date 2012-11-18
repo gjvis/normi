@@ -1,22 +1,22 @@
 //
-//  normiAppDelegate.m
+//  NormiAppDelegate.m
 //  Normi
 //
 //  Created by Gareth Visagie on 16/11/2012.
 //  Copyright (c) 2012 GJVIS Ltd. All rights reserved.
 //
 
-#import "normiAppDelegate.h"
+#import "NormiAppDelegate.h"
 
-#import "normiViewController.h"
+#import "NormiViewController.h"
 
-@implementation normiAppDelegate
+@implementation NormiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[normiViewController alloc] initWithNibName:@"normiViewController" bundle:nil];
+    self.viewController = [[NormiViewController alloc] initWithNibName:@"NormiViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

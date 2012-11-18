@@ -12,12 +12,20 @@
 		7FBBDD1A1656BC3C00004B8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD191656BC3C00004B8B /* CoreGraphics.framework */; };
 		7FBBDD201656BC3C00004B8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD1E1656BC3C00004B8B /* InfoPlist.strings */; };
 		7FBBDD221656BC3C00004B8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD211656BC3C00004B8B /* main.m */; };
-		7FBBDD261656BC3C00004B8B /* normiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD251656BC3C00004B8B /* normiAppDelegate.m */; };
+		7FBBDD261656BC3C00004B8B /* NormiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD251656BC3C00004B8B /* NormiAppDelegate.m */; };
 		7FBBDD281656BC3C00004B8B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD271656BC3C00004B8B /* Default.png */; };
 		7FBBDD2A1656BC3C00004B8B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD291656BC3C00004B8B /* Default@2x.png */; };
 		7FBBDD2C1656BC3C00004B8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD2B1656BC3C00004B8B /* Default-568h@2x.png */; };
-		7FBBDD2F1656BC3C00004B8B /* normiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD2E1656BC3C00004B8B /* normiViewController.m */; };
-		7FBBDD321656BC3C00004B8B /* normiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD301656BC3C00004B8B /* normiViewController.xib */; };
+		7FBBDD2F1656BC3C00004B8B /* NormiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD2E1656BC3C00004B8B /* NormiViewController.m */; };
+		7FBBDD321656BC3C00004B8B /* NormiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD301656BC3C00004B8B /* NormiViewController.xib */; };
+		7FBBDD3E1656DB7C00004B8B /* NormiSoundBank.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD3D1656DB7C00004B8B /* NormiSoundBank.m */; };
+		7FBBDD481656E57300004B8B /* bts_hit_10.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD471656E57300004B8B /* bts_hit_10.aif */; };
+		7FBBDD4C1656E59A00004B8B /* bts_hit_09.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD4B1656E59A00004B8B /* bts_hit_09.aif */; };
+		7FBBDD4E1656E5AA00004B8B /* bts_hit_07.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD4D1656E5AA00004B8B /* bts_hit_07.aif */; };
+		7FBBDD501656E5BE00004B8B /* bts_bkgdloop_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD4F1656E5BE00004B8B /* bts_bkgdloop_03.aif */; };
+		7FBBDD531656EF5000004B8B /* NormiPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD521656EF5000004B8B /* NormiPlayback.m */; };
+		7FBBDD551656FFD100004B8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD541656FFD100004B8B /* AudioToolbox.framework */; };
+		7FBBDD631658406700004B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD621658406700004B8B /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,14 +37,26 @@
 		7FBBDD1F1656BC3C00004B8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FBBDD211656BC3C00004B8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FBBDD231656BC3C00004B8B /* Normi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Normi-Prefix.pch"; sourceTree = "<group>"; };
-		7FBBDD241656BC3C00004B8B /* normiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = normiAppDelegate.h; sourceTree = "<group>"; };
-		7FBBDD251656BC3C00004B8B /* normiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = normiAppDelegate.m; sourceTree = "<group>"; };
+		7FBBDD241656BC3C00004B8B /* NormiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormiAppDelegate.h; sourceTree = "<group>"; };
+		7FBBDD251656BC3C00004B8B /* NormiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormiAppDelegate.m; sourceTree = "<group>"; };
 		7FBBDD271656BC3C00004B8B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		7FBBDD291656BC3C00004B8B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7FBBDD2B1656BC3C00004B8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		7FBBDD2D1656BC3C00004B8B /* normiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = normiViewController.h; sourceTree = "<group>"; };
-		7FBBDD2E1656BC3C00004B8B /* normiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = normiViewController.m; sourceTree = "<group>"; };
-		7FBBDD311656BC3C00004B8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/normiViewController.xib; sourceTree = "<group>"; };
+		7FBBDD2D1656BC3C00004B8B /* NormiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormiViewController.h; sourceTree = "<group>"; };
+		7FBBDD2E1656BC3C00004B8B /* NormiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormiViewController.m; sourceTree = "<group>"; };
+		7FBBDD311656BC3C00004B8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NormiViewController.xib; sourceTree = "<group>"; };
+		7FBBDD3C1656DB7C00004B8B /* NormiSoundBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormiSoundBank.h; sourceTree = "<group>"; };
+		7FBBDD3D1656DB7C00004B8B /* NormiSoundBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormiSoundBank.m; sourceTree = "<group>"; };
+		7FBBDD471656E57300004B8B /* bts_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_10.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_10.aif"; sourceTree = "<group>"; };
+		7FBBDD4B1656E59A00004B8B /* bts_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_09.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_09.aif"; sourceTree = "<group>"; };
+		7FBBDD4D1656E5AA00004B8B /* bts_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_07.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_07.aif"; sourceTree = "<group>"; };
+		7FBBDD4F1656E5BE00004B8B /* bts_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_bkgdloop_03.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_bkgdloop_03.aif"; sourceTree = "<group>"; };
+		7FBBDD511656EF5000004B8B /* NormiPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormiPlayback.h; sourceTree = "<group>"; };
+		7FBBDD521656EF5000004B8B /* NormiPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormiPlayback.m; sourceTree = "<group>"; };
+		7FBBDD541656FFD100004B8B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7FBBDD5C16583C6400004B8B /* MixerHostAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MixerHostAudio.h; path = Normi/MixerHostAudio.h; sourceTree = "<group>"; };
+		7FBBDD5D16583C6400004B8B /* MixerHostAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MixerHostAudio.m; path = Normi/MixerHostAudio.m; sourceTree = "<group>"; };
+		7FBBDD621658406700004B8B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBBDD631658406700004B8B /* AVFoundation.framework in Frameworks */,
+				7FBBDD551656FFD100004B8B /* AudioToolbox.framework in Frameworks */,
 				7FBBDD161656BC3C00004B8B /* UIKit.framework in Frameworks */,
 				7FBBDD181656BC3C00004B8B /* Foundation.framework in Frameworks */,
 				7FBBDD1A1656BC3C00004B8B /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +78,8 @@
 		7FBBDD061656BC3C00004B8B = {
 			isa = PBXGroup;
 			children = (
+				7FBBDD6116583FAF00004B8B /* Reference */,
+				7FBBDD4A1656E57800004B8B /* SoundBanks */,
 				7FBBDD1B1656BC3C00004B8B /* Normi */,
 				7FBBDD141656BC3C00004B8B /* Frameworks */,
 				7FBBDD121656BC3C00004B8B /* Products */,
@@ -73,6 +97,8 @@
 		7FBBDD141656BC3C00004B8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FBBDD541656FFD100004B8B /* AudioToolbox.framework */,
+				7FBBDD621658406700004B8B /* AVFoundation.framework */,
 				7FBBDD151656BC3C00004B8B /* UIKit.framework */,
 				7FBBDD171656BC3C00004B8B /* Foundation.framework */,
 				7FBBDD191656BC3C00004B8B /* CoreGraphics.framework */,
@@ -83,11 +109,15 @@
 		7FBBDD1B1656BC3C00004B8B /* Normi */ = {
 			isa = PBXGroup;
 			children = (
-				7FBBDD241656BC3C00004B8B /* normiAppDelegate.h */,
-				7FBBDD251656BC3C00004B8B /* normiAppDelegate.m */,
-				7FBBDD2D1656BC3C00004B8B /* normiViewController.h */,
-				7FBBDD2E1656BC3C00004B8B /* normiViewController.m */,
-				7FBBDD301656BC3C00004B8B /* normiViewController.xib */,
+				7FBBDD241656BC3C00004B8B /* NormiAppDelegate.h */,
+				7FBBDD251656BC3C00004B8B /* NormiAppDelegate.m */,
+				7FBBDD2D1656BC3C00004B8B /* NormiViewController.h */,
+				7FBBDD2E1656BC3C00004B8B /* NormiViewController.m */,
+				7FBBDD3C1656DB7C00004B8B /* NormiSoundBank.h */,
+				7FBBDD3D1656DB7C00004B8B /* NormiSoundBank.m */,
+				7FBBDD511656EF5000004B8B /* NormiPlayback.h */,
+				7FBBDD521656EF5000004B8B /* NormiPlayback.m */,
+				7FBBDD301656BC3C00004B8B /* NormiViewController.xib */,
 				7FBBDD1C1656BC3C00004B8B /* Supporting Files */,
 			);
 			path = Normi;
@@ -105,6 +135,26 @@
 				7FBBDD2B1656BC3C00004B8B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FBBDD4A1656E57800004B8B /* SoundBanks */ = {
+			isa = PBXGroup;
+			children = (
+				7FBBDD4D1656E5AA00004B8B /* bts_hit_07.aif */,
+				7FBBDD4B1656E59A00004B8B /* bts_hit_09.aif */,
+				7FBBDD4F1656E5BE00004B8B /* bts_bkgdloop_03.aif */,
+				7FBBDD471656E57300004B8B /* bts_hit_10.aif */,
+			);
+			name = SoundBanks;
+			sourceTree = "<group>";
+		};
+		7FBBDD6116583FAF00004B8B /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				7FBBDD5C16583C6400004B8B /* MixerHostAudio.h */,
+				7FBBDD5D16583C6400004B8B /* MixerHostAudio.m */,
+			);
+			name = Reference;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +183,7 @@
 		7FBBDD081656BC3C00004B8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = normi;
+				CLASSPREFIX = Normi;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "GJVIS Ltd";
 			};
@@ -163,7 +213,11 @@
 				7FBBDD281656BC3C00004B8B /* Default.png in Resources */,
 				7FBBDD2A1656BC3C00004B8B /* Default@2x.png in Resources */,
 				7FBBDD2C1656BC3C00004B8B /* Default-568h@2x.png in Resources */,
-				7FBBDD321656BC3C00004B8B /* normiViewController.xib in Resources */,
+				7FBBDD321656BC3C00004B8B /* NormiViewController.xib in Resources */,
+				7FBBDD481656E57300004B8B /* bts_hit_10.aif in Resources */,
+				7FBBDD4C1656E59A00004B8B /* bts_hit_09.aif in Resources */,
+				7FBBDD4E1656E5AA00004B8B /* bts_hit_07.aif in Resources */,
+				7FBBDD501656E5BE00004B8B /* bts_bkgdloop_03.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FBBDD221656BC3C00004B8B /* main.m in Sources */,
-				7FBBDD261656BC3C00004B8B /* normiAppDelegate.m in Sources */,
-				7FBBDD2F1656BC3C00004B8B /* normiViewController.m in Sources */,
+				7FBBDD261656BC3C00004B8B /* NormiAppDelegate.m in Sources */,
+				7FBBDD2F1656BC3C00004B8B /* NormiViewController.m in Sources */,
+				7FBBDD3E1656DB7C00004B8B /* NormiSoundBank.m in Sources */,
+				7FBBDD531656EF5000004B8B /* NormiPlayback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +247,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		7FBBDD301656BC3C00004B8B /* normiViewController.xib */ = {
+		7FBBDD301656BC3C00004B8B /* NormiViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7FBBDD311656BC3C00004B8B /* en */,
 			);
-			name = normiViewController.xib;
+			name = NormiViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -293,6 +349,7 @@
 				7FBBDD371656BC3C00004B8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
