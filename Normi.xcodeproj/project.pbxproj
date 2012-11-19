@@ -19,13 +19,23 @@
 		7FBBDD2F1656BC3C00004B8B /* NormiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD2E1656BC3C00004B8B /* NormiViewController.m */; };
 		7FBBDD321656BC3C00004B8B /* NormiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD301656BC3C00004B8B /* NormiViewController.xib */; };
 		7FBBDD3E1656DB7C00004B8B /* NormiSoundBank.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD3D1656DB7C00004B8B /* NormiSoundBank.m */; };
-		7FBBDD481656E57300004B8B /* bts_hit_10.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD471656E57300004B8B /* bts_hit_10.aif */; };
-		7FBBDD4C1656E59A00004B8B /* bts_hit_09.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD4B1656E59A00004B8B /* bts_hit_09.aif */; };
-		7FBBDD4E1656E5AA00004B8B /* bts_hit_07.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD4D1656E5AA00004B8B /* bts_hit_07.aif */; };
-		7FBBDD501656E5BE00004B8B /* bts_bkgdloop_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD4F1656E5BE00004B8B /* bts_bkgdloop_03.aif */; };
 		7FBBDD531656EF5000004B8B /* NormiPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBDD521656EF5000004B8B /* NormiPlayback.m */; };
 		7FBBDD551656FFD100004B8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD541656FFD100004B8B /* AudioToolbox.framework */; };
 		7FBBDD631658406700004B8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD621658406700004B8B /* AVFoundation.framework */; };
+		7FBBDD7E16599B8400004B8B /* bts_bkgdloop_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7016599B8400004B8B /* bts_bkgdloop_01.aif */; };
+		7FBBDD7F16599B8400004B8B /* bts_bkgdloop_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7116599B8400004B8B /* bts_bkgdloop_02.aif */; };
+		7FBBDD8016599B8400004B8B /* bts_bkgdloop_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7216599B8400004B8B /* bts_bkgdloop_03.aif */; };
+		7FBBDD8116599B8400004B8B /* bts_bkgdloop_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7316599B8400004B8B /* bts_bkgdloop_04.aif */; };
+		7FBBDD8216599B8400004B8B /* bts_hit_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7416599B8400004B8B /* bts_hit_01.aif */; };
+		7FBBDD8316599B8400004B8B /* bts_hit_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7516599B8400004B8B /* bts_hit_02.aif */; };
+		7FBBDD8416599B8400004B8B /* bts_hit_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7616599B8400004B8B /* bts_hit_03.aif */; };
+		7FBBDD8516599B8400004B8B /* bts_hit_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7716599B8400004B8B /* bts_hit_04.aif */; };
+		7FBBDD8616599B8400004B8B /* bts_hit_05.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7816599B8400004B8B /* bts_hit_05.aif */; };
+		7FBBDD8716599B8400004B8B /* bts_hit_06.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7916599B8400004B8B /* bts_hit_06.aif */; };
+		7FBBDD8816599B8400004B8B /* bts_hit_07.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7A16599B8400004B8B /* bts_hit_07.aif */; };
+		7FBBDD8916599B8400004B8B /* bts_hit_08.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7B16599B8400004B8B /* bts_hit_08.aif */; };
+		7FBBDD8A16599B8400004B8B /* bts_hit_09.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7C16599B8400004B8B /* bts_hit_09.aif */; };
+		7FBBDD8B16599B8400004B8B /* bts_hit_10.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7FBBDD7D16599B8400004B8B /* bts_hit_10.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,16 +57,26 @@
 		7FBBDD311656BC3C00004B8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NormiViewController.xib; sourceTree = "<group>"; };
 		7FBBDD3C1656DB7C00004B8B /* NormiSoundBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormiSoundBank.h; sourceTree = "<group>"; };
 		7FBBDD3D1656DB7C00004B8B /* NormiSoundBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormiSoundBank.m; sourceTree = "<group>"; };
-		7FBBDD471656E57300004B8B /* bts_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_10.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_10.aif"; sourceTree = "<group>"; };
-		7FBBDD4B1656E59A00004B8B /* bts_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_09.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_09.aif"; sourceTree = "<group>"; };
-		7FBBDD4D1656E5AA00004B8B /* bts_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_07.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_07.aif"; sourceTree = "<group>"; };
-		7FBBDD4F1656E5BE00004B8B /* bts_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_bkgdloop_03.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_bkgdloop_03.aif"; sourceTree = "<group>"; };
 		7FBBDD511656EF5000004B8B /* NormiPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormiPlayback.h; sourceTree = "<group>"; };
 		7FBBDD521656EF5000004B8B /* NormiPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormiPlayback.m; sourceTree = "<group>"; };
 		7FBBDD541656FFD100004B8B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7FBBDD5C16583C6400004B8B /* MixerHostAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MixerHostAudio.h; path = Normi/MixerHostAudio.h; sourceTree = "<group>"; };
 		7FBBDD5D16583C6400004B8B /* MixerHostAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MixerHostAudio.m; path = Normi/MixerHostAudio.m; sourceTree = "<group>"; };
 		7FBBDD621658406700004B8B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7FBBDD7016599B8400004B8B /* bts_bkgdloop_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_bkgdloop_01.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_bkgdloop_01.aif"; sourceTree = "<group>"; };
+		7FBBDD7116599B8400004B8B /* bts_bkgdloop_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_bkgdloop_02.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_bkgdloop_02.aif"; sourceTree = "<group>"; };
+		7FBBDD7216599B8400004B8B /* bts_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_bkgdloop_03.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_bkgdloop_03.aif"; sourceTree = "<group>"; };
+		7FBBDD7316599B8400004B8B /* bts_bkgdloop_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_bkgdloop_04.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_bkgdloop_04.aif"; sourceTree = "<group>"; };
+		7FBBDD7416599B8400004B8B /* bts_hit_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_01.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_01.aif"; sourceTree = "<group>"; };
+		7FBBDD7516599B8400004B8B /* bts_hit_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_02.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_02.aif"; sourceTree = "<group>"; };
+		7FBBDD7616599B8400004B8B /* bts_hit_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_03.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_03.aif"; sourceTree = "<group>"; };
+		7FBBDD7716599B8400004B8B /* bts_hit_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_04.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_04.aif"; sourceTree = "<group>"; };
+		7FBBDD7816599B8400004B8B /* bts_hit_05.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_05.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_05.aif"; sourceTree = "<group>"; };
+		7FBBDD7916599B8400004B8B /* bts_hit_06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_06.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_06.aif"; sourceTree = "<group>"; };
+		7FBBDD7A16599B8400004B8B /* bts_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_07.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_07.aif"; sourceTree = "<group>"; };
+		7FBBDD7B16599B8400004B8B /* bts_hit_08.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_08.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_08.aif"; sourceTree = "<group>"; };
+		7FBBDD7C16599B8400004B8B /* bts_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_09.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_09.aif"; sourceTree = "<group>"; };
+		7FBBDD7D16599B8400004B8B /* bts_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = bts_hit_10.aif; path = "../../../Dropbox/Normi iPhone App/Sound Sets/Soundscapes/By the Sea/bts_hit_10.aif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,10 +160,20 @@
 		7FBBDD4A1656E57800004B8B /* SoundBanks */ = {
 			isa = PBXGroup;
 			children = (
-				7FBBDD4D1656E5AA00004B8B /* bts_hit_07.aif */,
-				7FBBDD4B1656E59A00004B8B /* bts_hit_09.aif */,
-				7FBBDD4F1656E5BE00004B8B /* bts_bkgdloop_03.aif */,
-				7FBBDD471656E57300004B8B /* bts_hit_10.aif */,
+				7FBBDD7016599B8400004B8B /* bts_bkgdloop_01.aif */,
+				7FBBDD7116599B8400004B8B /* bts_bkgdloop_02.aif */,
+				7FBBDD7216599B8400004B8B /* bts_bkgdloop_03.aif */,
+				7FBBDD7316599B8400004B8B /* bts_bkgdloop_04.aif */,
+				7FBBDD7416599B8400004B8B /* bts_hit_01.aif */,
+				7FBBDD7516599B8400004B8B /* bts_hit_02.aif */,
+				7FBBDD7616599B8400004B8B /* bts_hit_03.aif */,
+				7FBBDD7716599B8400004B8B /* bts_hit_04.aif */,
+				7FBBDD7816599B8400004B8B /* bts_hit_05.aif */,
+				7FBBDD7916599B8400004B8B /* bts_hit_06.aif */,
+				7FBBDD7A16599B8400004B8B /* bts_hit_07.aif */,
+				7FBBDD7B16599B8400004B8B /* bts_hit_08.aif */,
+				7FBBDD7C16599B8400004B8B /* bts_hit_09.aif */,
+				7FBBDD7D16599B8400004B8B /* bts_hit_10.aif */,
 			);
 			name = SoundBanks;
 			sourceTree = "<group>";
@@ -214,10 +244,20 @@
 				7FBBDD2A1656BC3C00004B8B /* Default@2x.png in Resources */,
 				7FBBDD2C1656BC3C00004B8B /* Default-568h@2x.png in Resources */,
 				7FBBDD321656BC3C00004B8B /* NormiViewController.xib in Resources */,
-				7FBBDD481656E57300004B8B /* bts_hit_10.aif in Resources */,
-				7FBBDD4C1656E59A00004B8B /* bts_hit_09.aif in Resources */,
-				7FBBDD4E1656E5AA00004B8B /* bts_hit_07.aif in Resources */,
-				7FBBDD501656E5BE00004B8B /* bts_bkgdloop_03.aif in Resources */,
+				7FBBDD7E16599B8400004B8B /* bts_bkgdloop_01.aif in Resources */,
+				7FBBDD7F16599B8400004B8B /* bts_bkgdloop_02.aif in Resources */,
+				7FBBDD8016599B8400004B8B /* bts_bkgdloop_03.aif in Resources */,
+				7FBBDD8116599B8400004B8B /* bts_bkgdloop_04.aif in Resources */,
+				7FBBDD8216599B8400004B8B /* bts_hit_01.aif in Resources */,
+				7FBBDD8316599B8400004B8B /* bts_hit_02.aif in Resources */,
+				7FBBDD8416599B8400004B8B /* bts_hit_03.aif in Resources */,
+				7FBBDD8516599B8400004B8B /* bts_hit_04.aif in Resources */,
+				7FBBDD8616599B8400004B8B /* bts_hit_05.aif in Resources */,
+				7FBBDD8716599B8400004B8B /* bts_hit_06.aif in Resources */,
+				7FBBDD8816599B8400004B8B /* bts_hit_07.aif in Resources */,
+				7FBBDD8916599B8400004B8B /* bts_hit_08.aif in Resources */,
+				7FBBDD8A16599B8400004B8B /* bts_hit_09.aif in Resources */,
+				7FBBDD8B16599B8400004B8B /* bts_hit_10.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

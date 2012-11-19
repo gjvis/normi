@@ -14,5 +14,6 @@
 @property NormiSoundBank *soundBank;
 
 -(IBAction)playSample:(UIButton *)sender;
+-(IBAction)toggleLoops:(UIButton *)sender;
 
 @end

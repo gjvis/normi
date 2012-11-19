@@ -11,11 +11,13 @@
 
 @interface NormiSoundBank : NSObject
 {
-    NSArray *samples;
+    NSArray *hits;
+    NSArray *loops;
 }
 
 @property NormiPlayback *playback;
 
--(void)playSample:(int)sampleIndex;
+-(void)playRandomHit;
+-(void)toggleLoops;
 
 @end

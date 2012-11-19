@@ -9,7 +9,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-#define NUM_BUSES 4
+#define NUM_BUSES 21
+#define LOOP_BUS 0
 
 // Data structure for mono or stereo sound, to pass to the application's render callback function,
 // which gets invoked by a Mixer unit input bus when it needs more audio to play.
@@ -29,6 +30,13 @@ typedef struct {
     
 } BusData;
 
+typedef struct {
+    BOOL        play;
+    SoundData   *loops;
+    int         numLoops;
+    SoundData   *currentLoop;
+    UInt32      sampleNumber;
+} LoopBusData;
 
 @interface NormiPlayback : NSObject <AVAudioSessionDelegate>
 {
@@ -37,6 +45,7 @@ typedef struct {
     SoundData                       *sounds;
     UInt32                          numSounds;
     BusData                         buses[NUM_BUSES];
+    LoopBusData                     loopBusData[NUM_BUSES];
     
     
     // Before using an AudioStreamBasicDescription struct you must initialize it to 0. However, because these ASBDs
@@ -68,5 +77,10 @@ typedef struct {
 
 - (void) loadHits: (NSArray *)urls;
 - (void) playHit: (int)index;
+
+- (void) loadLoops: (NSArray *)urls;
+- (void) startLoops;
+- (void) stopLoops;
+- (BOOL) loopsArePlaying;
 
 @end

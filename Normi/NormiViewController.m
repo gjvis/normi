@@ -38,20 +38,12 @@
 
 -(IBAction)playSample:(UIButton *)sender
 {
-    NSString *buttonTitle = [sender titleForState:UIControlStateNormal];
-    
-    NSLog(@"Playing sample %@", buttonTitle);
-    
-    int sampleIndex = 0;
-    if ([buttonTitle isEqualToString: @"Two"]) {
-        sampleIndex = 1;
-    } else if ([buttonTitle isEqualToString: @"Three"]) {
-        sampleIndex = 2;
-    } else if ([buttonTitle isEqualToString: @"Four"]) {
-        sampleIndex = 3;
-    }
-    
-    [soundBank playSample: sampleIndex];
+    [soundBank playRandomHit];
+}
+
+-(IBAction)toggleLoops:(UIButton *)sender
+{
+    [soundBank toggleLoops];
 }
 
 @end
