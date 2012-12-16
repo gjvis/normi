@@ -102,6 +102,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F5D5043167E34A000F02267 /* Seaside */ = {
+			isa = PBXGroup;
+			children = (
+				7FBBDD7016599B8400004B8B /* bts_bkgdloop_01.aif */,
+				7FBBDD7116599B8400004B8B /* bts_bkgdloop_02.aif */,
+				7FBBDD7216599B8400004B8B /* bts_bkgdloop_03.aif */,
+				7FBBDD7316599B8400004B8B /* bts_bkgdloop_04.aif */,
+				7FBBDD7416599B8400004B8B /* bts_hit_01.aif */,
+				7FBBDD7516599B8400004B8B /* bts_hit_02.aif */,
+				7FBBDD7616599B8400004B8B /* bts_hit_03.aif */,
+				7FBBDD7716599B8400004B8B /* bts_hit_04.aif */,
+				7FBBDD7816599B8400004B8B /* bts_hit_05.aif */,
+				7FBBDD7916599B8400004B8B /* bts_hit_06.aif */,
+				7FBBDD7A16599B8400004B8B /* bts_hit_07.aif */,
+				7FBBDD7B16599B8400004B8B /* bts_hit_08.aif */,
+				7FBBDD7C16599B8400004B8B /* bts_hit_09.aif */,
+				7FBBDD7D16599B8400004B8B /* bts_hit_10.aif */,
+			);
+			name = Seaside;
+			sourceTree = "<group>";
+		};
 		7FBBDD061656BC3C00004B8B = {
 			isa = PBXGroup;
 			children = (
@@ -171,20 +192,7 @@
 		7FBBDD4A1656E57800004B8B /* SoundBanks */ = {
 			isa = PBXGroup;
 			children = (
-				7FBBDD7016599B8400004B8B /* bts_bkgdloop_01.aif */,
-				7FBBDD7116599B8400004B8B /* bts_bkgdloop_02.aif */,
-				7FBBDD7216599B8400004B8B /* bts_bkgdloop_03.aif */,
-				7FBBDD7316599B8400004B8B /* bts_bkgdloop_04.aif */,
-				7FBBDD7416599B8400004B8B /* bts_hit_01.aif */,
-				7FBBDD7516599B8400004B8B /* bts_hit_02.aif */,
-				7FBBDD7616599B8400004B8B /* bts_hit_03.aif */,
-				7FBBDD7716599B8400004B8B /* bts_hit_04.aif */,
-				7FBBDD7816599B8400004B8B /* bts_hit_05.aif */,
-				7FBBDD7916599B8400004B8B /* bts_hit_06.aif */,
-				7FBBDD7A16599B8400004B8B /* bts_hit_07.aif */,
-				7FBBDD7B16599B8400004B8B /* bts_hit_08.aif */,
-				7FBBDD7C16599B8400004B8B /* bts_hit_09.aif */,
-				7FBBDD7D16599B8400004B8B /* bts_hit_10.aif */,
+				7F5D5043167E34A000F02267 /* Seaside */,
 			);
 			name = SoundBanks;
 			sourceTree = "<group>";
