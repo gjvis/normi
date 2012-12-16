@@ -55,7 +55,7 @@
 {
     int sampleIndex = rand() % 10;
     
-    NSLog(@"Playing sample # %d", sampleIndex);
+//    NSLog(@"Playing sample # %d", sampleIndex);
     
     [playback playHit: sampleIndex];
 }

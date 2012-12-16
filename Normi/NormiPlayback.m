@@ -9,6 +9,41 @@
 //
 
 #import "NormiPlayback.h"
+#import "NormiUtilities.c"
+
+//////////////////////////////////////////////////
+static float getMeanVolumeSint16( SInt16 * vector , int length ) {
+    
+    
+    // get average input volume level for meter display
+    // by calculating log of mean volume of the buffer
+    // and displaying it to the screen
+    // (note: there's a vdsp function to do this but it works on float samples
+    
+    int sum;
+    int i;
+    int averageVolume;
+    float logVolume;
+    
+    
+    sum = 0;
+    for ( i = 0; i < length ; i++ ) {
+        sum += abs((int) vector[i]);
+    }
+    
+    averageVolume = sum / length;
+    
+    //    printf("\naverageVolume before scale = %lu", averageVolume );
+    
+    // now convert to logarithm and scale log10(0->32768) into 0->1 for display
+    
+    
+    logVolume = log10f( (float) averageVolume );
+    logVolume = logVolume / log10(32768);
+    
+    return (logVolume);
+    
+}
 
 #pragma mark Mixer input bus render callback
 
@@ -49,8 +84,7 @@ static OSStatus hitInputRenderCallback (
     
     BusData           *buses                    = (BusData *) inRefCon;
     BusData           *bus                      = &buses[inBusNumber];
-        
-    // Disable the bus if we're out of stuff to play on it
+    
     if (bus->sound == NULL) {
         memset(ioData->mBuffers[0].mData, 0, ioData->mBuffers[0].mDataByteSize);
         memset(ioData->mBuffers[1].mData, 0, ioData->mBuffers[1].mDataByteSize);
@@ -193,6 +227,72 @@ static OSStatus loopInputRenderCallback (
     return noErr;
 }
 
+static OSStatus recordingInputRenderCallback (
+                                         void                        *inRefCon,
+                                         AudioUnitRenderActionFlags  *ioActionFlags,
+                                         const AudioTimeStamp        *inTimeStamp,
+                                         UInt32                      inBusNumber,
+                                         UInt32                      inNumberFrames,
+                                         AudioBufferList             *ioData
+                                         ) {
+    
+    NormiPlayback *normi = (__bridge NormiPlayback *)inRefCon;
+    
+    AudioBufferList *inputData;
+    inputData = normi.inputBuffer;
+    
+    OSStatus result;
+    result = AudioUnitRender(normi.ioUnit,
+                             ioActionFlags,
+                             inTimeStamp,
+                             1,
+                             inNumberFrames,
+                             inputData);
+    
+    normi.inputLevel =  getMeanVolumeSint16(inputData->mBuffers[0].mData, inNumberFrames);
+    
+//    // These values should be in a more conventional location for a bunch of preprocessor defines in your real code
+//#define DBOFFSET 0
+//    // DBOFFSET is An offset that will be used to normalize the decibels to a maximum of zero.
+//    // This is an estimate, you can do your own or construct an experiment to find the right value
+//#define LOWPASSFILTERTIMESLICE .001
+//    // LOWPASSFILTERTIMESLICE is part of the low pass filter and should be a small positive value
+//    
+//    SInt16* samples = (SInt16*)(inputData->mBuffers[0].mData); // Step 1: get an array of your samples that you can loop through. Each sample contains the amplitude.
+//    
+//    Float32 decibels = DBOFFSET; // When we have no signal we'll leave this on the lowest setting
+//    Float32 currentFilteredValueOfSampleAmplitude, previousFilteredValueOfSampleAmplitude; // We'll need these in the low-pass filter
+//    Float32 peakValue = DBOFFSET; // We'll end up storing the peak value here
+//    
+//    for (int i=0; i < inNumberFrames; i++) {
+//        
+//        Float32 absoluteValueOfSampleAmplitude = abs(samples[i]); //Step 2: for each sample, get its amplitude's absolute value.
+//        
+//        // Step 3: for each sample's absolute value, run it through a simple low-pass filter
+//        // Begin low-pass filter
+//        currentFilteredValueOfSampleAmplitude = LOWPASSFILTERTIMESLICE * absoluteValueOfSampleAmplitude + (1.0 - LOWPASSFILTERTIMESLICE) * previousFilteredValueOfSampleAmplitude;
+//        previousFilteredValueOfSampleAmplitude = currentFilteredValueOfSampleAmplitude;
+//        Float32 amplitudeToConvertToDB = currentFilteredValueOfSampleAmplitude;
+//        // End low-pass filter
+//        
+//        Float32 sampleDB = 20.0*log10(amplitudeToConvertToDB) + DBOFFSET;
+//        // Step 4: for each sample's filtered absolute value, convert it into decibels
+//        // Step 5: for each sample's filtered absolute value in decibels, add an offset value that normalizes the clipping point of the device to zero.
+//        
+//        if((sampleDB == sampleDB) && (sampleDB != -DBL_MAX)) { // if it's a rational number and isn't infinite
+//            
+//            if(sampleDB > peakValue) peakValue = sampleDB; // Step 6: keep the highest value you find.
+//            decibels = peakValue; // final value
+//        }
+//    }
+    
+//    NSLog(@"input level is: %f", decibels);
+    
+//    normi.inputLevel = decibels;
+    
+    return noErr;
+}
+
 #pragma mark -
 #pragma mark Audio route change listener callback
 
@@ -263,8 +363,10 @@ void audioRouteChangeListenerCallback (
 {
     for (int i = 0; i < NUM_BUSES; i++) {
         if (buses[i].sound == NULL) {
-            buses[i].sound = &sounds[index];
             buses[i].sampleNumber = 0;
+            buses[i].sound = &sounds[index];
+            
+            NSLog(@"Playing sample # %d on bus # %d", index, i);
             
             return;
         }
@@ -279,6 +381,10 @@ void audioRouteChangeListenerCallback (
 @synthesize mixerUnit;                  // the Multichannel Mixer unit
 @synthesize playing;                    // Boolean flag to indicate whether audio is playing or not
 @synthesize interruptedDuringPlayback;  // Boolean flag to indicate whether audio was playing when an interruption arrived
+
+@synthesize inputLevel;
+@synthesize ioUnit;
+@synthesize inputBuffer;
 
 #pragma mark -
 #pragma mark Initialize
@@ -296,6 +402,7 @@ void audioRouteChangeListenerCallback (
     [self setupStereoStreamFormat];
     [self setupMonoStreamFormat];
     [self configureAndInitializeAudioProcessingGraph];
+    [self allocateInputBuffers];
     
     return self;
 }
@@ -314,7 +421,7 @@ void audioRouteChangeListenerCallback (
     
     // Assign the Playback category to the audio session.
     NSError *audioSessionError = nil;
-    [mySession setCategory: AVAudioSessionCategoryPlayback
+    [mySession setCategory: AVAudioSessionCategoryPlayAndRecord
                      error: &audioSessionError];
     
     if (audioSessionError != nil) {
@@ -374,7 +481,7 @@ void audioRouteChangeListenerCallback (
     stereoStreamFormat.mSampleRate        = graphSampleRate;
     
     
-    NSLog (@"The stereo stream format for the \"guitar\" mixer input bus:");
+    NSLog (@"The stereo stream format:");
     [self printASBD: stereoStreamFormat];
 }
 
@@ -383,12 +490,12 @@ void audioRouteChangeListenerCallback (
     
     // The AudioUnitSampleType data type is the recommended type for sample data in audio
     //    units. This obtains the byte size of the type for use in filling in the ASBD.
-    size_t bytesPerSample = sizeof (AudioUnitSampleType);
+    size_t bytesPerSample = sizeof (AudioSampleType);
     
     // Fill the application audio format struct's fields to define a linear PCM,
     //        stereo, noninterleaved stream at the hardware sample rate.
     monoStreamFormat.mFormatID          = kAudioFormatLinearPCM;
-    monoStreamFormat.mFormatFlags       = kAudioFormatFlagsAudioUnitCanonical;
+    monoStreamFormat.mFormatFlags       = kAudioFormatFlagsCanonical;
     monoStreamFormat.mBytesPerPacket    = bytesPerSample;
     monoStreamFormat.mFramesPerPacket   = 1;
     monoStreamFormat.mBytesPerFrame     = bytesPerSample;
@@ -396,7 +503,7 @@ void audioRouteChangeListenerCallback (
     monoStreamFormat.mBitsPerChannel    = 8 * bytesPerSample;
     monoStreamFormat.mSampleRate        = graphSampleRate;
     
-    NSLog (@"The mono stream format for the \"beats\" mixer input bus:");
+    NSLog (@"The mono stream format:");
     [self printASBD: monoStreamFormat];
     
 }
@@ -423,7 +530,7 @@ void audioRouteChangeListenerCallback (
     // Create a new audio processing graph.
     result = NewAUGraph (&processingGraph);
     
-    if (noErr != result) {[self printErrorMessage: @"NewAUGraph" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "NewAUGraph" withStatus: result]; return;}
     
     
     //............................................................................
@@ -460,7 +567,7 @@ void audioRouteChangeListenerCallback (
                                 &iOUnitDescription,
                                 &iONode);
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphNewNode failed for I/O unit" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphNewNode failed for I/O unit" withStatus: result]; return;}
     
     
     result =    AUGraphAddNode (
@@ -469,7 +576,7 @@ void audioRouteChangeListenerCallback (
                                 &mixerNode
                                 );
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphNewNode failed for Mixer unit" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphNewNode failed for Mixer unit" withStatus: result]; return;}
     
     
     //............................................................................
@@ -480,8 +587,56 @@ void audioRouteChangeListenerCallback (
     //    process audio).
     result = AUGraphOpen (processingGraph);
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphOpen" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphOpen" withStatus: result]; return;}
     
+    //............................................................................
+    // Obtain the remote IO unit instance from its corresponding node.
+    
+    result =    AUGraphNodeInfo (
+                                 processingGraph,
+                                 iONode,
+                                 NULL,
+                                 &ioUnit
+                                 );
+    
+    if (noErr != result) {[self printErrorMessage: "Couldn't get ioUnit using AUGraphNodeInfo" withStatus: result]; return;}
+    
+    //............................................................................
+    // Set up the remote i/o unit
+
+    UInt32 enableFlag = 1;
+
+    result = AudioUnitSetProperty(ioUnit,
+                                  kAudioOutputUnitProperty_EnableIO,
+                                  kAudioUnitScope_Output,
+                                  0,    // playback on remoteIO is on bus 0
+                                  &enableFlag,
+                                  sizeof(enableFlag));
+    
+    
+    if (noErr != result) {[self printErrorMessage: "Couldn't enable playback on remoteIO" withStatus:result]; return;}
+
+    result = AudioUnitSetProperty(ioUnit,
+                                  kAudioOutputUnitProperty_EnableIO,
+                                  kAudioUnitScope_Input,
+                                  1,    // recording on remoteIO is on bus 1
+                                  &enableFlag,
+                                  sizeof(enableFlag));
+    
+    
+    if (noErr != result) {[self printErrorMessage: "Couldn't enable recording on remoteIO" withStatus:result]; return;}
+    
+    NSLog (@"Setting kAudioUnitProperty_StreamFormat (monoStreamFormat) for the I/O unit input bus's output scope");
+    result = AudioUnitSetProperty (
+                                      ioUnit,
+                                      kAudioUnitProperty_StreamFormat,
+                                      kAudioUnitScope_Output,
+                                      1,
+                                      &monoStreamFormat,
+                                      sizeof (monoStreamFormat)
+                                      );
+    
+    if (noErr != result) {[self printErrorMessage: "Couldn't set stream format on ioUnit recording output" withStatus:result]; return;}
     
     //............................................................................
     // Obtain the mixer unit instance from its corresponding node.
@@ -493,13 +648,15 @@ void audioRouteChangeListenerCallback (
                                  &mixerUnit
                                  );
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphNodeInfo" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "Couldn't get mixerUnit using AUGraphNodeInfo" withStatus: result]; return;}
     
     
     //............................................................................
     // Multichannel Mixer unit Setup
     
-    UInt32 busCount = NUM_BUSES;
+    const UInt32 loopBus = NUM_BUSES + LOOP_BUS;
+    
+    const UInt32 busCount = NUM_BUSES;
     NSLog (@"Setting mixer unit input bus count to: %lu", busCount);
     result = AudioUnitSetProperty (
                                    mixerUnit,
@@ -510,7 +667,7 @@ void audioRouteChangeListenerCallback (
                                    sizeof (busCount)
                                    );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit bus count)" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AudioUnitSetProperty (set mixer unit bus count)" withStatus: result]; return;}
     
     
     NSLog (@"Setting kAudioUnitProperty_MaximumFramesPerSlice for mixer unit global scope");
@@ -527,20 +684,42 @@ void audioRouteChangeListenerCallback (
                                    sizeof (maximumFramesPerSlice)
                                    );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit input stream format)" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AudioUnitSetProperty (set mixer unit input stream format)" withStatus: result]; return;}
     
+    // Attach the input render callback from the RemoteIO mic bus. input, output, sigh, this is confusing.
+    AURenderCallbackStruct micCallbackStruct;
+    micCallbackStruct.inputProc = &recordingInputRenderCallback;
+    micCallbackStruct.inputProcRefCon = (__bridge void *)(self);
+    result = AudioUnitSetProperty(ioUnit,
+                                  kAudioOutputUnitProperty_SetInputCallback,
+                                  kAudioUnitScope_Global,
+                                  1,
+                                  &micCallbackStruct,
+                                  sizeof(micCallbackStruct));
+    
+    if (noErr != result) {[self printErrorMessage: "Set ioUnit mic render callback failed." withStatus: result]; return;}
     
     // Attach the input render callback and context to each input bus
     for (UInt16 busNumber = 0; busNumber < busCount; ++busNumber) {
         
         // Setup the struture that contains the input render callback
         AURenderCallbackStruct inputCallbackStruct;
-        if (busNumber == LOOP_BUS) {
-            inputCallbackStruct.inputProc        = &loopInputRenderCallback;
-            inputCallbackStruct.inputProcRefCon  = loopBusData;
-        } else {
-            inputCallbackStruct.inputProc        = &hitInputRenderCallback;
-            inputCallbackStruct.inputProcRefCon  = buses;
+        
+        bool isStereo = false;
+        
+        // the last bus is for the loops
+        switch (busNumber) {
+            case loopBus:
+                inputCallbackStruct.inputProc        = &loopInputRenderCallback;
+                inputCallbackStruct.inputProcRefCon  = loopBusData;
+                isStereo = true;
+                break;
+                
+            default:
+                inputCallbackStruct.inputProc        = &hitInputRenderCallback;
+                inputCallbackStruct.inputProcRefCon  = buses;
+                isStereo = true;
+                break;
         }
         
         NSLog (@"Registering the render callback with mixer unit input bus %u", busNumber);
@@ -552,24 +731,33 @@ void audioRouteChangeListenerCallback (
                                               &inputCallbackStruct
                                               );
         
-        if (noErr != result) {[self printErrorMessage: @"AUGraphSetNodeInputCallback" withStatus: result]; return;}
+        if (noErr != result) {[self printErrorMessage: "AUGraphSetNodeInputCallback" withStatus: result]; return;}
     
         
-        NSLog (@"Setting stereo stream format for mixer unit input bus # %d", busNumber);
-        result = AudioUnitSetProperty (
-                                       mixerUnit,
-                                       kAudioUnitProperty_StreamFormat,
-                                       kAudioUnitScope_Input,
-                                       busNumber,
-                                       &stereoStreamFormat,
-                                       sizeof (stereoStreamFormat)
-                                       );
-        
-        if (noErr != result) {
-            [self printErrorMessage: [NSString stringWithFormat: @"AudioUnitSetProperty (set mixer unit input bus # %d stream format)", busNumber]
-                         withStatus: result];
-            return;
+        if (isStereo)
+        {
+            NSLog (@"Setting stereo stream format for mixer unit input bus # %d", busNumber);
+            result = AudioUnitSetProperty (
+                                           mixerUnit,
+                                           kAudioUnitProperty_StreamFormat,
+                                           kAudioUnitScope_Input,
+                                           busNumber,
+                                           &stereoStreamFormat,
+                                           sizeof (stereoStreamFormat)
+                                           );
+        } else {
+            NSLog (@"Setting mono stream format for mixer unit input bus # %d", busNumber);
+            result = AudioUnitSetProperty (
+                                           mixerUnit,
+                                           kAudioUnitProperty_StreamFormat,
+                                           kAudioUnitScope_Input,
+                                           busNumber,
+                                           &monoStreamFormat,
+                                           sizeof (stereoStreamFormat)
+                                           );            
         }
+                
+        if (noErr != result) {[self printErrorMessage: "AudioUnitSetProperty (set mixer unit input bus stream format)" withStatus: result]; return;}
                 
     }
     
@@ -585,7 +773,7 @@ void audioRouteChangeListenerCallback (
                                    sizeof (graphSampleRate)
                                    );
     
-    if (noErr != result) {[self printErrorMessage: @"AudioUnitSetProperty (set mixer unit output stream format)" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AudioUnitSetProperty (set mixer unit output stream format)" withStatus: result]; return;}
     
     
     //............................................................................
@@ -600,7 +788,7 @@ void audioRouteChangeListenerCallback (
                                       0                  // desintation node input bus number
                                       );
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphConnectNodeInput" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphConnectNodeInput" withStatus: result]; return;}
     
     
     //............................................................................
@@ -617,7 +805,7 @@ void audioRouteChangeListenerCallback (
     //    each input and output, and validate the connections between audio units.
     result = AUGraphInitialize (processingGraph);
     
-    if (noErr != result) {[self printErrorMessage: @"AUGraphInitialize" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphInitialize" withStatus: result]; return;}
 }
 
 
@@ -629,7 +817,7 @@ void audioRouteChangeListenerCallback (
     
     NSLog (@"Starting audio processing graph");
     OSStatus result = AUGraphStart (processingGraph);
-    if (noErr != result) {[self printErrorMessage: @"AUGraphStart" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphStart" withStatus: result]; return;}
     
     self.playing = YES;
 }
@@ -640,12 +828,12 @@ void audioRouteChangeListenerCallback (
     NSLog (@"Stopping audio processing graph");
     Boolean isRunning = false;
     OSStatus result = AUGraphIsRunning (processingGraph, &isRunning);
-    if (noErr != result) {[self printErrorMessage: @"AUGraphIsRunning" withStatus: result]; return;}
+    if (noErr != result) {[self printErrorMessage: "AUGraphIsRunning" withStatus: result]; return;}
     
     if (isRunning) {
         
         result = AUGraphStop (processingGraph);
-        if (noErr != result) {[self printErrorMessage: @"AUGraphStop" withStatus: result]; return;}
+        if (noErr != result) {[self printErrorMessage: "AUGraphStop" withStatus: result]; return;}
         self.playing = NO;
     }
 }
@@ -728,18 +916,8 @@ void audioRouteChangeListenerCallback (
 }
 
 
-- (void) printErrorMessage: (NSString *) errorString withStatus: (OSStatus) result {
-    
-    char resultString[5];
-    UInt32 swappedResult = CFSwapInt32HostToBig (result);
-    bcopy (&swappedResult, resultString, 4);
-    resultString[4] = '\0';
-    
-    NSLog (
-           @"*** %@ error: %4.4s\n",
-           errorString,
-           (char*) &resultString
-           );
+- (void) printErrorMessage: (const char *) errorString withStatus: (OSStatus) result {
+    CheckError(result, errorString);
 }
 
 
@@ -790,8 +968,8 @@ void audioRouteChangeListenerCallback (
     }
     
     // resize sounds to have all of the hits.
-    sounds = (SoundData *) realloc (sounds, numSounds * sizeof(SoundData));
-    if (sounds == NULL) { [self printErrorMessage: @"Error (re)allocating memory for hits" withStatus: 1]; return;}
+    sounds = (SoundData *) malloc (numSounds * sizeof(SoundData));
+    if (sounds == NULL) { [self printErrorMessage: "Error (re)allocating memory for hits" withStatus: 1]; return;}
 
     
     for (int i = 0; i < numSounds; i++) {
@@ -809,8 +987,8 @@ void audioRouteChangeListenerCallback (
     }
     
     // resize sounds to have all of the hits.
-    loopBusData->loops = (SoundData *) realloc (loopBusData->loops, numLoops * sizeof(SoundData));
-    if (loopBusData->loops == NULL) { [self printErrorMessage: @"Error (re)allocating memory for loops" withStatus: 1]; return;}
+    loopBusData->loops = (SoundData *) malloc(numLoops * sizeof(SoundData));
+    if (loopBusData->loops == NULL) { [self printErrorMessage: "Error (re)allocating memory for loops" withStatus: 1]; return;}
 
     loopBusData->numLoops = numLoops;
     
@@ -834,7 +1012,7 @@ void audioRouteChangeListenerCallback (
     // Open an audio file and associate it with the extended audio file object.
     OSStatus result = ExtAudioFileOpenURL (cfURL, &audioFileObject);
     
-    if (noErr != result || NULL == audioFileObject) {[self printErrorMessage: @"ExtAudioFileOpenURL" withStatus: result]; return empty;}
+    if (noErr != result || NULL == audioFileObject) {[self printErrorMessage: "ExtAudioFileOpenURL" withStatus: result]; return empty;}
     
     // Get the audio file's length in frames.
     UInt64 totalFramesInFile = 0;
@@ -847,7 +1025,7 @@ void audioRouteChangeListenerCallback (
                                          &totalFramesInFile
                                          );
     
-    if (noErr != result) {[self printErrorMessage: @"ExtAudioFileGetProperty (audio file length in frames)" withStatus: result]; return empty;}
+    if (noErr != result) {[self printErrorMessage: "ExtAudioFileGetProperty (audio file length in frames)" withStatus: result]; return empty;}
     
     // Assign the frame count to the soundStructArray instance variable
     sound.frameCount = totalFramesInFile;
@@ -863,7 +1041,7 @@ void audioRouteChangeListenerCallback (
                                          &fileAudioFormat
                                          );
     
-    if (noErr != result) {[self printErrorMessage: @"ExtAudioFileGetProperty (file audio format)" withStatus: result]; return empty;}
+    if (noErr != result) {[self printErrorMessage: "ExtAudioFileGetProperty (file audio format)" withStatus: result]; return empty;}
     
     UInt32 channelCount = fileAudioFormat.mChannelsPerFrame;
     
@@ -906,7 +1084,7 @@ void audioRouteChangeListenerCallback (
                                          &importFormat
                                          );
     
-    if (noErr != result) {[self printErrorMessage: @"ExtAudioFileSetProperty (client data format)" withStatus: result]; return empty;}
+    if (noErr != result) {[self printErrorMessage: "ExtAudioFileSetProperty (client data format)" withStatus: result]; return empty;}
     
     // Set up an AudioBufferList struct, which has two roles:
     //
@@ -962,7 +1140,7 @@ void audioRouteChangeListenerCallback (
     
     if (noErr != result) {
         
-        [self printErrorMessage: @"ExtAudioFileRead failure - " withStatus: result];
+        [self printErrorMessage: "ExtAudioFileRead failure - " withStatus: result];
         
         // If reading from the file failed, then free the memory for the sound buffer.
         free (sound.audioDataLeft);
@@ -1008,4 +1186,17 @@ void audioRouteChangeListenerCallback (
     return loopBusData->play;
 }
 
+- (void) allocateInputBuffers
+{
+    size_t bytesPerSample = sizeof (AudioSampleType);
+    
+    inputBuffer = (AudioBufferList *)malloc(sizeof(AudioBuffer));
+	inputBuffer->mNumberBuffers = 1;
+	inputBuffer->mBuffers[0].mNumberChannels = 1;
+    
+	inputBuffer->mBuffers[0].mDataByteSize = 512*bytesPerSample;
+	inputBuffer->mBuffers[0].mData = calloc(512, bytesPerSample);
+}
+
 @end
+

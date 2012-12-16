@@ -9,8 +9,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-#define NUM_BUSES 21
-#define LOOP_BUS 0
+#define NUM_BUSES 22
+#define LOOP_BUS -1
 
 // Data structure for mono or stereo sound, to pass to the application's render callback function,
 // which gets invoked by a Mixer unit input bus when it needs more audio to play.
@@ -55,6 +55,11 @@ typedef struct {
     BOOL                            playing;
     BOOL                            interruptedDuringPlayback;
     AudioUnit                       mixerUnit;
+    AudioUnit                       ioUnit;
+    
+    // input stuff
+    float inputLevel;
+    AudioBufferList *inputBuffer;
 }
 
 @property (readwrite)           AudioStreamBasicDescription stereoStreamFormat;
@@ -64,6 +69,10 @@ typedef struct {
 @property                       BOOL                        interruptedDuringPlayback;
 @property                       AudioUnit                   mixerUnit;
 
+@property (assign) float inputLevel;
+@property (readonly) AudioUnit ioUnit;
+@property (readonly) AudioBufferList *inputBuffer;
+
 - (void) setupAudioSession;
 - (void) setupStereoStreamFormat;
 - (void) setupMonoStreamFormat;
@@ -72,8 +81,10 @@ typedef struct {
 - (void) startAUGraph;
 - (void) stopAUGraph;
 
+- (void) allocateInputBuffers;
+
 - (void) printASBD: (AudioStreamBasicDescription) asbd;
-- (void) printErrorMessage: (NSString *) errorString withStatus: (OSStatus) result;
+- (void) printErrorMessage: (const char *) errorString withStatus: (OSStatus) result;
 
 - (void) loadHits: (NSArray *)urls;
 - (void) playHit: (int)index;

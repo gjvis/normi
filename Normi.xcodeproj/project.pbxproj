@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F5D5035167D22EC00F02267 /* NormiUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D5034167D22EC00F02267 /* NormiUtilities.c */; };
+		7F5D503A167D254A00F02267 /* NormiRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D5039167D254A00F02267 /* NormiRecorder.m */; };
+		7FA17B1E165BE14D00E24ACF /* TPCircularBuffer in Resources */ = {isa = PBXBuildFile; fileRef = 7FA17B1D165BE14D00E24ACF /* TPCircularBuffer */; };
 		7FBBDD161656BC3C00004B8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD151656BC3C00004B8B /* UIKit.framework */; };
 		7FBBDD181656BC3C00004B8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD171656BC3C00004B8B /* Foundation.framework */; };
 		7FBBDD1A1656BC3C00004B8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD191656BC3C00004B8B /* CoreGraphics.framework */; };
@@ -39,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F5D5034167D22EC00F02267 /* NormiUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NormiUtilities.c; sourceTree = "<group>"; };
+		7F5D5038167D254A00F02267 /* NormiRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormiRecorder.h; sourceTree = "<group>"; };
+		7F5D5039167D254A00F02267 /* NormiRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormiRecorder.m; sourceTree = "<group>"; };
+		7FA17B1D165BE14D00E24ACF /* TPCircularBuffer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPCircularBuffer; sourceTree = "<group>"; };
 		7FBBDD111656BC3C00004B8B /* Normi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Normi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBBDD151656BC3C00004B8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7FBBDD171656BC3C00004B8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +105,7 @@
 		7FBBDD061656BC3C00004B8B = {
 			isa = PBXGroup;
 			children = (
+				7FA17B1D165BE14D00E24ACF /* TPCircularBuffer */,
 				7FBBDD6116583FAF00004B8B /* Reference */,
 				7FBBDD4A1656E57800004B8B /* SoundBanks */,
 				7FBBDD1B1656BC3C00004B8B /* Normi */,
@@ -139,6 +147,9 @@
 				7FBBDD521656EF5000004B8B /* NormiPlayback.m */,
 				7FBBDD301656BC3C00004B8B /* NormiViewController.xib */,
 				7FBBDD1C1656BC3C00004B8B /* Supporting Files */,
+				7F5D5034167D22EC00F02267 /* NormiUtilities.c */,
+				7F5D5038167D254A00F02267 /* NormiRecorder.h */,
+				7F5D5039167D254A00F02267 /* NormiRecorder.m */,
 			);
 			path = Normi;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 				7FBBDD8916599B8400004B8B /* bts_hit_08.aif in Resources */,
 				7FBBDD8A16599B8400004B8B /* bts_hit_09.aif in Resources */,
 				7FBBDD8B16599B8400004B8B /* bts_hit_10.aif in Resources */,
+				7FA17B1E165BE14D00E24ACF /* TPCircularBuffer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +285,8 @@
 				7FBBDD2F1656BC3C00004B8B /* NormiViewController.m in Sources */,
 				7FBBDD3E1656DB7C00004B8B /* NormiSoundBank.m in Sources */,
 				7FBBDD531656EF5000004B8B /* NormiPlayback.m in Sources */,
+				7F5D5035167D22EC00F02267 /* NormiUtilities.c in Sources */,
+				7F5D503A167D254A00F02267 /* NormiRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
