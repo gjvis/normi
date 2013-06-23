@@ -58,6 +58,31 @@ static float getAverage(float *buffer, int length)
                                        selector:@selector(updateInputDisplay:)
                                        userInfo:soundBank.playback
                                         repeats: YES];
+        
+        //-----------------------------
+        // Create attributed string
+        //-----------------------------
+        NSString *str = @"Background Loop";
+        loopsOnString = [[NSMutableAttributedString alloc] initWithString:str];
+        loopsOffString = [[NSMutableAttributedString alloc] initWithString:str];
+        
+        // Set font, notice the range is for the whole string
+        UIFont *font = [UIFont systemFontOfSize:15];
+        [loopsOnString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, [loopsOnString length])];
+        [loopsOffString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, [loopsOffString length])];
+        
+        // Set text color
+        [loopsOnString addAttribute:NSForegroundColorAttributeName
+                              value:[UIColor colorWithRed:0.196078 green:0.309804  blue:0.521569 alpha:1]
+                              range:NSMakeRange(0, [loopsOffString length])];
+        [loopsOffString addAttribute:NSForegroundColorAttributeName
+                               value:[UIColor colorWithRed:0.196078 green:0.309804  blue:0.521569 alpha:1]
+                               range:NSMakeRange(0, [loopsOffString length])];
+        
+        // Set strikethrough for off string
+        [loopsOffString addAttribute:NSStrikethroughStyleAttributeName
+                                 value:[NSNumber numberWithInt:2]
+                                 range:NSMakeRange(0, [loopsOffString length])];
     }
     
     return self;
@@ -67,6 +92,8 @@ static float getAverage(float *buffer, int length)
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [loopToggleButton setAttributedTitle:loopsOffString forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,19 +106,25 @@ static float getAverage(float *buffer, int length)
 {
     float inputLevel = [[timer userInfo] inputLevel];
     inputLevelDisplay.progress = inputLevel;
+    inputLevelValue.text = [NSString stringWithFormat: @"%2.0f", inputLevel*100];
     
     if (inputLevel > hitTriggerInputThreshold) {
         if (!playLocked) {
-            NSLog(@"Play locked at %f", inputLevel);
             playLocked = true;
+            NSLog(@"Play locked at %2.0f", inputLevel*100);
+            logView.text = [[NSString stringWithFormat:@"Play locked at %2.0f\n", inputLevel*100]
+                            stringByAppendingString: logView.text];
             [soundBank playRandomHit];
         }
     } else {
-//        NSLog(@"Play unlocked");
-        playLocked = false;
+        if (playLocked) {
+            NSLog(@"Play unlocked");
+            playLocked = false;
+            logView.text = [@"Play unlocked\n" stringByAppendingString: logView.text];
+        }
     }
     
-//    
+//
 //    
 //    inputMonitorBuffer[inputMonitorBufferIndex] = inputLevel;
 //        
@@ -134,13 +167,19 @@ static float getAverage(float *buffer, int length)
 -(IBAction)toggleLoops:(UIButton *)sender
 {
     [soundBank toggleLoops];
+    loopsOn = !loopsOn;
+    if (loopsOn) {
+        [loopToggleButton setAttributedTitle:loopsOnString forState:UIControlStateNormal];
+    } else {
+        [loopToggleButton setAttributedTitle:loopsOffString forState:UIControlStateNormal];
+    }
 }
 
 // Handle a change in the mixer output gain slider.
 - (IBAction) hitTriggerInputThresholdChanged: (UISlider *) sender
 {
     hitTriggerInputThreshold = sender.value;
-    hitTriggerThresholdDisplay.text = [NSString stringWithFormat: @"Hit Trigger Threshold: %f", hitTriggerInputThreshold];
+    hitTriggerThresholdDisplay.text = [NSString stringWithFormat: @"%2.0f", hitTriggerInputThreshold*100];
 }
 
 @end

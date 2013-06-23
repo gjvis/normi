@@ -9,6 +9,64 @@
 /* Begin PBXBuildFile section */
 		7F5D5035167D22EC00F02267 /* NormiUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D5034167D22EC00F02267 /* NormiUtilities.c */; };
 		7F5D503A167D254A00F02267 /* NormiRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5D5039167D254A00F02267 /* NormiRecorder.m */; };
+		7F5D5120167E38AF00F02267 /* normi.config in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D509B167E38AF00F02267 /* normi.config */; };
+		7F5D5121167E38AF00F02267 /* do_bkgdloop_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D509D167E38AF00F02267 /* do_bkgdloop_01.aif */; };
+		7F5D5122167E38AF00F02267 /* do_bkgdloop_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D509E167E38AF00F02267 /* do_bkgdloop_02.aif */; };
+		7F5D5123167E38AF00F02267 /* do_bkgdloop_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D509F167E38AF00F02267 /* do_bkgdloop_03.aif */; };
+		7F5D5124167E38AF00F02267 /* do_bkgdloop_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A0167E38AF00F02267 /* do_bkgdloop_04.aif */; };
+		7F5D5125167E38AF00F02267 /* do_hit_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A1167E38AF00F02267 /* do_hit_01.aif */; };
+		7F5D5126167E38AF00F02267 /* do_hit_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A2167E38AF00F02267 /* do_hit_02.aif */; };
+		7F5D5127167E38AF00F02267 /* do_hit_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A3167E38AF00F02267 /* do_hit_03.aif */; };
+		7F5D5128167E38AF00F02267 /* do_hit_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A4167E38AF00F02267 /* do_hit_04.aif */; };
+		7F5D5129167E38AF00F02267 /* do_hit_05.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A5167E38AF00F02267 /* do_hit_05.aif */; };
+		7F5D512A167E38AF00F02267 /* do_hit_06.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A6167E38AF00F02267 /* do_hit_06.aif */; };
+		7F5D512B167E38AF00F02267 /* do_hit_07.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A7167E38AF00F02267 /* do_hit_07.aif */; };
+		7F5D512C167E38AF00F02267 /* do_hit_08.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A8167E38AF00F02267 /* do_hit_08.aif */; };
+		7F5D512D167E38AF00F02267 /* do_hit_09.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50A9167E38AF00F02267 /* do_hit_09.aif */; };
+		7F5D512E167E38AF00F02267 /* do_hit_10.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50AA167E38AF00F02267 /* do_hit_10.aif */; };
+		7F5D512F167E38AF00F02267 /* do_hit_11.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50AB167E38AF00F02267 /* do_hit_11.aif */; };
+		7F5D5130167E38AF00F02267 /* do_hit_12.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50AC167E38AF00F02267 /* do_hit_12.aif */; };
+		7F5D5131167E38AF00F02267 /* do_hit_13.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50AD167E38AF00F02267 /* do_hit_13.aif */; };
+		7F5D5132167E38AF00F02267 /* do_hit_14.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50AE167E38AF00F02267 /* do_hit_14.aif */; };
+		7F5D5133167E38AF00F02267 /* do_hit_15.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50AF167E38AF00F02267 /* do_hit_15.aif */; };
+		7F5D5134167E38AF00F02267 /* do_hit_16.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B0167E38AF00F02267 /* do_hit_16.aif */; };
+		7F5D5135167E38AF00F02267 /* normi.config in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B1167E38AF00F02267 /* normi.config */; };
+		7F5D5136167E38AF00F02267 /* normi.config in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B3167E38AF00F02267 /* normi.config */; };
+		7F5D5137167E38AF00F02267 /* rf_bkgdloop_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B4167E38AF00F02267 /* rf_bkgdloop_01.aif */; };
+		7F5D5138167E38AF00F02267 /* rf_bkgdloop_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B5167E38AF00F02267 /* rf_bkgdloop_02.aif */; };
+		7F5D5139167E38AF00F02267 /* rf_bkgdloop_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B6167E38AF00F02267 /* rf_bkgdloop_03.aif */; };
+		7F5D513A167E38AF00F02267 /* rf_bkgdloop_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B7167E38AF00F02267 /* rf_bkgdloop_04.aif */; };
+		7F5D513B167E38AF00F02267 /* rf_hit_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B8167E38AF00F02267 /* rf_hit_01.aif */; };
+		7F5D513C167E38AF00F02267 /* rf_hit_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50B9167E38AF00F02267 /* rf_hit_02.aif */; };
+		7F5D513D167E38AF00F02267 /* rf_hit_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50BA167E38AF00F02267 /* rf_hit_03.aif */; };
+		7F5D513E167E38AF00F02267 /* rf_hit_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50BB167E38AF00F02267 /* rf_hit_04.aif */; };
+		7F5D513F167E38AF00F02267 /* rf_hit_05.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50BC167E38AF00F02267 /* rf_hit_05.aif */; };
+		7F5D5140167E38AF00F02267 /* rf_hit_06.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50BD167E38AF00F02267 /* rf_hit_06.aif */; };
+		7F5D5141167E38AF00F02267 /* rf_hit_07.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50BE167E38AF00F02267 /* rf_hit_07.aif */; };
+		7F5D5142167E38AF00F02267 /* rf_hit_08.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50BF167E38AF00F02267 /* rf_hit_08.aif */; };
+		7F5D5143167E38AF00F02267 /* rf_hit_09.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C0167E38AF00F02267 /* rf_hit_09.aif */; };
+		7F5D5144167E38AF00F02267 /* rf_hit_10.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C1167E38AF00F02267 /* rf_hit_10.aif */; };
+		7F5D5145167E38AF00F02267 /* rf_hit_11.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C2167E38AF00F02267 /* rf_hit_11.aif */; };
+		7F5D5146167E38AF00F02267 /* rf_hit_12.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C3167E38AF00F02267 /* rf_hit_12.aif */; };
+		7F5D5147167E38AF00F02267 /* normi.config in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C5167E38AF00F02267 /* normi.config */; };
+		7F5D5148167E38AF00F02267 /* ww2_bkgdloop_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C6167E38AF00F02267 /* ww2_bkgdloop_01.aif */; };
+		7F5D5149167E38AF00F02267 /* ww2_bkgdloop_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C7167E38AF00F02267 /* ww2_bkgdloop_02.aif */; };
+		7F5D514A167E38AF00F02267 /* ww2_bkgdloop_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C8167E38AF00F02267 /* ww2_bkgdloop_03.aif */; };
+		7F5D514B167E38AF00F02267 /* ww2_bkgdloop_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50C9167E38AF00F02267 /* ww2_bkgdloop_04.aif */; };
+		7F5D514C167E38AF00F02267 /* ww2_hit_01.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50CA167E38AF00F02267 /* ww2_hit_01.aif */; };
+		7F5D514D167E38AF00F02267 /* ww2_hit_02.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50CB167E38AF00F02267 /* ww2_hit_02.aif */; };
+		7F5D514E167E38AF00F02267 /* ww2_hit_03.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50CC167E38AF00F02267 /* ww2_hit_03.aif */; };
+		7F5D514F167E38AF00F02267 /* ww2_hit_04.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50CD167E38AF00F02267 /* ww2_hit_04.aif */; };
+		7F5D5150167E38AF00F02267 /* ww2_hit_05.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50CE167E38AF00F02267 /* ww2_hit_05.aif */; };
+		7F5D5151167E38AF00F02267 /* ww2_hit_06.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50CF167E38AF00F02267 /* ww2_hit_06.aif */; };
+		7F5D5152167E38AF00F02267 /* ww2_hit_07.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D0167E38AF00F02267 /* ww2_hit_07.aif */; };
+		7F5D5153167E38AF00F02267 /* ww2_hit_08.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D1167E38AF00F02267 /* ww2_hit_08.aif */; };
+		7F5D5154167E38AF00F02267 /* ww2_hit_09.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D2167E38AF00F02267 /* ww2_hit_09.aif */; };
+		7F5D5155167E38AF00F02267 /* ww2_hit_10.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D3167E38AF00F02267 /* ww2_hit_10.aif */; };
+		7F5D5156167E38AF00F02267 /* ww2_hit_11.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D4167E38AF00F02267 /* ww2_hit_11.aif */; };
+		7F5D5157167E38AF00F02267 /* ww2_hit_12.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D5167E38AF00F02267 /* ww2_hit_12.aif */; };
+		7F5D5158167E38AF00F02267 /* ww2_hit_13.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D6167E38AF00F02267 /* ww2_hit_13.aif */; };
+		7F5D5159167E38AF00F02267 /* ww2_hit_14.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7F5D50D7167E38AF00F02267 /* ww2_hit_14.aif */; };
 		7FA17B1E165BE14D00E24ACF /* TPCircularBuffer in Resources */ = {isa = PBXBuildFile; fileRef = 7FA17B1D165BE14D00E24ACF /* TPCircularBuffer */; };
 		7FBBDD161656BC3C00004B8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD151656BC3C00004B8B /* UIKit.framework */; };
 		7FBBDD181656BC3C00004B8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FBBDD171656BC3C00004B8B /* Foundation.framework */; };
@@ -45,6 +103,78 @@
 		7F5D5034167D22EC00F02267 /* NormiUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NormiUtilities.c; sourceTree = "<group>"; };
 		7F5D5038167D254A00F02267 /* NormiRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormiRecorder.h; sourceTree = "<group>"; };
 		7F5D5039167D254A00F02267 /* NormiRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormiRecorder.m; sourceTree = "<group>"; };
+		7F5D508D167E38AF00F02267 /* bts_bkgdloop_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_bkgdloop_01.aif; sourceTree = "<group>"; };
+		7F5D508E167E38AF00F02267 /* bts_bkgdloop_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_bkgdloop_02.aif; sourceTree = "<group>"; };
+		7F5D508F167E38AF00F02267 /* bts_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_bkgdloop_03.aif; sourceTree = "<group>"; };
+		7F5D5090167E38AF00F02267 /* bts_bkgdloop_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_bkgdloop_04.aif; sourceTree = "<group>"; };
+		7F5D5091167E38AF00F02267 /* bts_hit_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_01.aif; sourceTree = "<group>"; };
+		7F5D5092167E38AF00F02267 /* bts_hit_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_02.aif; sourceTree = "<group>"; };
+		7F5D5093167E38AF00F02267 /* bts_hit_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_03.aif; sourceTree = "<group>"; };
+		7F5D5094167E38AF00F02267 /* bts_hit_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_04.aif; sourceTree = "<group>"; };
+		7F5D5095167E38AF00F02267 /* bts_hit_05.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_05.aif; sourceTree = "<group>"; };
+		7F5D5096167E38AF00F02267 /* bts_hit_06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_06.aif; sourceTree = "<group>"; };
+		7F5D5097167E38AF00F02267 /* bts_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_07.aif; sourceTree = "<group>"; };
+		7F5D5098167E38AF00F02267 /* bts_hit_08.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_08.aif; sourceTree = "<group>"; };
+		7F5D5099167E38AF00F02267 /* bts_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_09.aif; sourceTree = "<group>"; };
+		7F5D509A167E38AF00F02267 /* bts_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = bts_hit_10.aif; sourceTree = "<group>"; };
+		7F5D509B167E38AF00F02267 /* normi.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normi.config; sourceTree = "<group>"; };
+		7F5D509D167E38AF00F02267 /* do_bkgdloop_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_bkgdloop_01.aif; sourceTree = "<group>"; };
+		7F5D509E167E38AF00F02267 /* do_bkgdloop_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_bkgdloop_02.aif; sourceTree = "<group>"; };
+		7F5D509F167E38AF00F02267 /* do_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_bkgdloop_03.aif; sourceTree = "<group>"; };
+		7F5D50A0167E38AF00F02267 /* do_bkgdloop_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_bkgdloop_04.aif; sourceTree = "<group>"; };
+		7F5D50A1167E38AF00F02267 /* do_hit_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_01.aif; sourceTree = "<group>"; };
+		7F5D50A2167E38AF00F02267 /* do_hit_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_02.aif; sourceTree = "<group>"; };
+		7F5D50A3167E38AF00F02267 /* do_hit_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_03.aif; sourceTree = "<group>"; };
+		7F5D50A4167E38AF00F02267 /* do_hit_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_04.aif; sourceTree = "<group>"; };
+		7F5D50A5167E38AF00F02267 /* do_hit_05.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_05.aif; sourceTree = "<group>"; };
+		7F5D50A6167E38AF00F02267 /* do_hit_06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_06.aif; sourceTree = "<group>"; };
+		7F5D50A7167E38AF00F02267 /* do_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_07.aif; sourceTree = "<group>"; };
+		7F5D50A8167E38AF00F02267 /* do_hit_08.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_08.aif; sourceTree = "<group>"; };
+		7F5D50A9167E38AF00F02267 /* do_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_09.aif; sourceTree = "<group>"; };
+		7F5D50AA167E38AF00F02267 /* do_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_10.aif; sourceTree = "<group>"; };
+		7F5D50AB167E38AF00F02267 /* do_hit_11.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_11.aif; sourceTree = "<group>"; };
+		7F5D50AC167E38AF00F02267 /* do_hit_12.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_12.aif; sourceTree = "<group>"; };
+		7F5D50AD167E38AF00F02267 /* do_hit_13.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_13.aif; sourceTree = "<group>"; };
+		7F5D50AE167E38AF00F02267 /* do_hit_14.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_14.aif; sourceTree = "<group>"; };
+		7F5D50AF167E38AF00F02267 /* do_hit_15.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_15.aif; sourceTree = "<group>"; };
+		7F5D50B0167E38AF00F02267 /* do_hit_16.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = do_hit_16.aif; sourceTree = "<group>"; };
+		7F5D50B1167E38AF00F02267 /* normi.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normi.config; sourceTree = "<group>"; };
+		7F5D50B3167E38AF00F02267 /* normi.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normi.config; sourceTree = "<group>"; };
+		7F5D50B4167E38AF00F02267 /* rf_bkgdloop_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_bkgdloop_01.aif; sourceTree = "<group>"; };
+		7F5D50B5167E38AF00F02267 /* rf_bkgdloop_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_bkgdloop_02.aif; sourceTree = "<group>"; };
+		7F5D50B6167E38AF00F02267 /* rf_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_bkgdloop_03.aif; sourceTree = "<group>"; };
+		7F5D50B7167E38AF00F02267 /* rf_bkgdloop_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_bkgdloop_04.aif; sourceTree = "<group>"; };
+		7F5D50B8167E38AF00F02267 /* rf_hit_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_01.aif; sourceTree = "<group>"; };
+		7F5D50B9167E38AF00F02267 /* rf_hit_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_02.aif; sourceTree = "<group>"; };
+		7F5D50BA167E38AF00F02267 /* rf_hit_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_03.aif; sourceTree = "<group>"; };
+		7F5D50BB167E38AF00F02267 /* rf_hit_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_04.aif; sourceTree = "<group>"; };
+		7F5D50BC167E38AF00F02267 /* rf_hit_05.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_05.aif; sourceTree = "<group>"; };
+		7F5D50BD167E38AF00F02267 /* rf_hit_06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_06.aif; sourceTree = "<group>"; };
+		7F5D50BE167E38AF00F02267 /* rf_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_07.aif; sourceTree = "<group>"; };
+		7F5D50BF167E38AF00F02267 /* rf_hit_08.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_08.aif; sourceTree = "<group>"; };
+		7F5D50C0167E38AF00F02267 /* rf_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_09.aif; sourceTree = "<group>"; };
+		7F5D50C1167E38AF00F02267 /* rf_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_10.aif; sourceTree = "<group>"; };
+		7F5D50C2167E38AF00F02267 /* rf_hit_11.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_11.aif; sourceTree = "<group>"; };
+		7F5D50C3167E38AF00F02267 /* rf_hit_12.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = rf_hit_12.aif; sourceTree = "<group>"; };
+		7F5D50C5167E38AF00F02267 /* normi.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = normi.config; sourceTree = "<group>"; };
+		7F5D50C6167E38AF00F02267 /* ww2_bkgdloop_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_bkgdloop_01.aif; sourceTree = "<group>"; };
+		7F5D50C7167E38AF00F02267 /* ww2_bkgdloop_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_bkgdloop_02.aif; sourceTree = "<group>"; };
+		7F5D50C8167E38AF00F02267 /* ww2_bkgdloop_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_bkgdloop_03.aif; sourceTree = "<group>"; };
+		7F5D50C9167E38AF00F02267 /* ww2_bkgdloop_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_bkgdloop_04.aif; sourceTree = "<group>"; };
+		7F5D50CA167E38AF00F02267 /* ww2_hit_01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_01.aif; sourceTree = "<group>"; };
+		7F5D50CB167E38AF00F02267 /* ww2_hit_02.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_02.aif; sourceTree = "<group>"; };
+		7F5D50CC167E38AF00F02267 /* ww2_hit_03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_03.aif; sourceTree = "<group>"; };
+		7F5D50CD167E38AF00F02267 /* ww2_hit_04.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_04.aif; sourceTree = "<group>"; };
+		7F5D50CE167E38AF00F02267 /* ww2_hit_05.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_05.aif; sourceTree = "<group>"; };
+		7F5D50CF167E38AF00F02267 /* ww2_hit_06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_06.aif; sourceTree = "<group>"; };
+		7F5D50D0167E38AF00F02267 /* ww2_hit_07.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_07.aif; sourceTree = "<group>"; };
+		7F5D50D1167E38AF00F02267 /* ww2_hit_08.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_08.aif; sourceTree = "<group>"; };
+		7F5D50D2167E38AF00F02267 /* ww2_hit_09.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_09.aif; sourceTree = "<group>"; };
+		7F5D50D3167E38AF00F02267 /* ww2_hit_10.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_10.aif; sourceTree = "<group>"; };
+		7F5D50D4167E38AF00F02267 /* ww2_hit_11.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_11.aif; sourceTree = "<group>"; };
+		7F5D50D5167E38AF00F02267 /* ww2_hit_12.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_12.aif; sourceTree = "<group>"; };
+		7F5D50D6167E38AF00F02267 /* ww2_hit_13.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_13.aif; sourceTree = "<group>"; };
+		7F5D50D7167E38AF00F02267 /* ww2_hit_14.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = ww2_hit_14.aif; sourceTree = "<group>"; };
 		7FA17B1D165BE14D00E24ACF /* TPCircularBuffer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPCircularBuffer; sourceTree = "<group>"; };
 		7FBBDD111656BC3C00004B8B /* Normi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Normi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBBDD151656BC3C00004B8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -123,6 +253,110 @@
 			name = Seaside;
 			sourceTree = "<group>";
 		};
+		7F5D508C167E38AF00F02267 /* By the Sea */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D508D167E38AF00F02267 /* bts_bkgdloop_01.aif */,
+				7F5D508E167E38AF00F02267 /* bts_bkgdloop_02.aif */,
+				7F5D508F167E38AF00F02267 /* bts_bkgdloop_03.aif */,
+				7F5D5090167E38AF00F02267 /* bts_bkgdloop_04.aif */,
+				7F5D5091167E38AF00F02267 /* bts_hit_01.aif */,
+				7F5D5092167E38AF00F02267 /* bts_hit_02.aif */,
+				7F5D5093167E38AF00F02267 /* bts_hit_03.aif */,
+				7F5D5094167E38AF00F02267 /* bts_hit_04.aif */,
+				7F5D5095167E38AF00F02267 /* bts_hit_05.aif */,
+				7F5D5096167E38AF00F02267 /* bts_hit_06.aif */,
+				7F5D5097167E38AF00F02267 /* bts_hit_07.aif */,
+				7F5D5098167E38AF00F02267 /* bts_hit_08.aif */,
+				7F5D5099167E38AF00F02267 /* bts_hit_09.aif */,
+				7F5D509A167E38AF00F02267 /* bts_hit_10.aif */,
+				7F5D509B167E38AF00F02267 /* normi.config */,
+			);
+			name = "By the Sea";
+			path = "../Sound Sets/Soundscapes/By the Sea";
+			sourceTree = "<group>";
+		};
+		7F5D509C167E38AF00F02267 /* Deep Ocean */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D509D167E38AF00F02267 /* do_bkgdloop_01.aif */,
+				7F5D509E167E38AF00F02267 /* do_bkgdloop_02.aif */,
+				7F5D509F167E38AF00F02267 /* do_bkgdloop_03.aif */,
+				7F5D50A0167E38AF00F02267 /* do_bkgdloop_04.aif */,
+				7F5D50A1167E38AF00F02267 /* do_hit_01.aif */,
+				7F5D50A2167E38AF00F02267 /* do_hit_02.aif */,
+				7F5D50A3167E38AF00F02267 /* do_hit_03.aif */,
+				7F5D50A4167E38AF00F02267 /* do_hit_04.aif */,
+				7F5D50A5167E38AF00F02267 /* do_hit_05.aif */,
+				7F5D50A6167E38AF00F02267 /* do_hit_06.aif */,
+				7F5D50A7167E38AF00F02267 /* do_hit_07.aif */,
+				7F5D50A8167E38AF00F02267 /* do_hit_08.aif */,
+				7F5D50A9167E38AF00F02267 /* do_hit_09.aif */,
+				7F5D50AA167E38AF00F02267 /* do_hit_10.aif */,
+				7F5D50AB167E38AF00F02267 /* do_hit_11.aif */,
+				7F5D50AC167E38AF00F02267 /* do_hit_12.aif */,
+				7F5D50AD167E38AF00F02267 /* do_hit_13.aif */,
+				7F5D50AE167E38AF00F02267 /* do_hit_14.aif */,
+				7F5D50AF167E38AF00F02267 /* do_hit_15.aif */,
+				7F5D50B0167E38AF00F02267 /* do_hit_16.aif */,
+				7F5D50B1167E38AF00F02267 /* normi.config */,
+			);
+			name = "Deep Ocean";
+			path = "../Sound Sets/Soundscapes/Deep Ocean";
+			sourceTree = "<group>";
+		};
+		7F5D50B2167E38AF00F02267 /* Rain Forest */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D50B3167E38AF00F02267 /* normi.config */,
+				7F5D50B4167E38AF00F02267 /* rf_bkgdloop_01.aif */,
+				7F5D50B5167E38AF00F02267 /* rf_bkgdloop_02.aif */,
+				7F5D50B6167E38AF00F02267 /* rf_bkgdloop_03.aif */,
+				7F5D50B7167E38AF00F02267 /* rf_bkgdloop_04.aif */,
+				7F5D50B8167E38AF00F02267 /* rf_hit_01.aif */,
+				7F5D50B9167E38AF00F02267 /* rf_hit_02.aif */,
+				7F5D50BA167E38AF00F02267 /* rf_hit_03.aif */,
+				7F5D50BB167E38AF00F02267 /* rf_hit_04.aif */,
+				7F5D50BC167E38AF00F02267 /* rf_hit_05.aif */,
+				7F5D50BD167E38AF00F02267 /* rf_hit_06.aif */,
+				7F5D50BE167E38AF00F02267 /* rf_hit_07.aif */,
+				7F5D50BF167E38AF00F02267 /* rf_hit_08.aif */,
+				7F5D50C0167E38AF00F02267 /* rf_hit_09.aif */,
+				7F5D50C1167E38AF00F02267 /* rf_hit_10.aif */,
+				7F5D50C2167E38AF00F02267 /* rf_hit_11.aif */,
+				7F5D50C3167E38AF00F02267 /* rf_hit_12.aif */,
+			);
+			name = "Rain Forest";
+			path = "../Sound Sets/Soundscapes/Rain Forest";
+			sourceTree = "<group>";
+		};
+		7F5D50C4167E38AF00F02267 /* WWII Warzone */ = {
+			isa = PBXGroup;
+			children = (
+				7F5D50C5167E38AF00F02267 /* normi.config */,
+				7F5D50C6167E38AF00F02267 /* ww2_bkgdloop_01.aif */,
+				7F5D50C7167E38AF00F02267 /* ww2_bkgdloop_02.aif */,
+				7F5D50C8167E38AF00F02267 /* ww2_bkgdloop_03.aif */,
+				7F5D50C9167E38AF00F02267 /* ww2_bkgdloop_04.aif */,
+				7F5D50CA167E38AF00F02267 /* ww2_hit_01.aif */,
+				7F5D50CB167E38AF00F02267 /* ww2_hit_02.aif */,
+				7F5D50CC167E38AF00F02267 /* ww2_hit_03.aif */,
+				7F5D50CD167E38AF00F02267 /* ww2_hit_04.aif */,
+				7F5D50CE167E38AF00F02267 /* ww2_hit_05.aif */,
+				7F5D50CF167E38AF00F02267 /* ww2_hit_06.aif */,
+				7F5D50D0167E38AF00F02267 /* ww2_hit_07.aif */,
+				7F5D50D1167E38AF00F02267 /* ww2_hit_08.aif */,
+				7F5D50D2167E38AF00F02267 /* ww2_hit_09.aif */,
+				7F5D50D3167E38AF00F02267 /* ww2_hit_10.aif */,
+				7F5D50D4167E38AF00F02267 /* ww2_hit_11.aif */,
+				7F5D50D5167E38AF00F02267 /* ww2_hit_12.aif */,
+				7F5D50D6167E38AF00F02267 /* ww2_hit_13.aif */,
+				7F5D50D7167E38AF00F02267 /* ww2_hit_14.aif */,
+			);
+			name = "WWII Warzone";
+			path = "../Sound Sets/Soundscapes/WWII Warzone";
+			sourceTree = "<group>";
+		};
 		7FBBDD061656BC3C00004B8B = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +426,10 @@
 		7FBBDD4A1656E57800004B8B /* SoundBanks */ = {
 			isa = PBXGroup;
 			children = (
+				7F5D508C167E38AF00F02267 /* By the Sea */,
+				7F5D509C167E38AF00F02267 /* Deep Ocean */,
+				7F5D50B2167E38AF00F02267 /* Rain Forest */,
+				7F5D50C4167E38AF00F02267 /* WWII Warzone */,
 				7F5D5043167E34A000F02267 /* Seaside */,
 			);
 			name = SoundBanks;
@@ -233,7 +471,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Normi;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "GJVIS Ltd";
 			};
 			buildConfigurationList = 7FBBDD0B1656BC3C00004B8B /* Build configuration list for PBXProject "Normi" */;
@@ -278,6 +516,64 @@
 				7FBBDD8A16599B8400004B8B /* bts_hit_09.aif in Resources */,
 				7FBBDD8B16599B8400004B8B /* bts_hit_10.aif in Resources */,
 				7FA17B1E165BE14D00E24ACF /* TPCircularBuffer in Resources */,
+				7F5D5120167E38AF00F02267 /* normi.config in Resources */,
+				7F5D5121167E38AF00F02267 /* do_bkgdloop_01.aif in Resources */,
+				7F5D5122167E38AF00F02267 /* do_bkgdloop_02.aif in Resources */,
+				7F5D5123167E38AF00F02267 /* do_bkgdloop_03.aif in Resources */,
+				7F5D5124167E38AF00F02267 /* do_bkgdloop_04.aif in Resources */,
+				7F5D5125167E38AF00F02267 /* do_hit_01.aif in Resources */,
+				7F5D5126167E38AF00F02267 /* do_hit_02.aif in Resources */,
+				7F5D5127167E38AF00F02267 /* do_hit_03.aif in Resources */,
+				7F5D5128167E38AF00F02267 /* do_hit_04.aif in Resources */,
+				7F5D5129167E38AF00F02267 /* do_hit_05.aif in Resources */,
+				7F5D512A167E38AF00F02267 /* do_hit_06.aif in Resources */,
+				7F5D512B167E38AF00F02267 /* do_hit_07.aif in Resources */,
+				7F5D512C167E38AF00F02267 /* do_hit_08.aif in Resources */,
+				7F5D512D167E38AF00F02267 /* do_hit_09.aif in Resources */,
+				7F5D512E167E38AF00F02267 /* do_hit_10.aif in Resources */,
+				7F5D512F167E38AF00F02267 /* do_hit_11.aif in Resources */,
+				7F5D5130167E38AF00F02267 /* do_hit_12.aif in Resources */,
+				7F5D5131167E38AF00F02267 /* do_hit_13.aif in Resources */,
+				7F5D5132167E38AF00F02267 /* do_hit_14.aif in Resources */,
+				7F5D5133167E38AF00F02267 /* do_hit_15.aif in Resources */,
+				7F5D5134167E38AF00F02267 /* do_hit_16.aif in Resources */,
+				7F5D5135167E38AF00F02267 /* normi.config in Resources */,
+				7F5D5136167E38AF00F02267 /* normi.config in Resources */,
+				7F5D5137167E38AF00F02267 /* rf_bkgdloop_01.aif in Resources */,
+				7F5D5138167E38AF00F02267 /* rf_bkgdloop_02.aif in Resources */,
+				7F5D5139167E38AF00F02267 /* rf_bkgdloop_03.aif in Resources */,
+				7F5D513A167E38AF00F02267 /* rf_bkgdloop_04.aif in Resources */,
+				7F5D513B167E38AF00F02267 /* rf_hit_01.aif in Resources */,
+				7F5D513C167E38AF00F02267 /* rf_hit_02.aif in Resources */,
+				7F5D513D167E38AF00F02267 /* rf_hit_03.aif in Resources */,
+				7F5D513E167E38AF00F02267 /* rf_hit_04.aif in Resources */,
+				7F5D513F167E38AF00F02267 /* rf_hit_05.aif in Resources */,
+				7F5D5140167E38AF00F02267 /* rf_hit_06.aif in Resources */,
+				7F5D5141167E38AF00F02267 /* rf_hit_07.aif in Resources */,
+				7F5D5142167E38AF00F02267 /* rf_hit_08.aif in Resources */,
+				7F5D5143167E38AF00F02267 /* rf_hit_09.aif in Resources */,
+				7F5D5144167E38AF00F02267 /* rf_hit_10.aif in Resources */,
+				7F5D5145167E38AF00F02267 /* rf_hit_11.aif in Resources */,
+				7F5D5146167E38AF00F02267 /* rf_hit_12.aif in Resources */,
+				7F5D5147167E38AF00F02267 /* normi.config in Resources */,
+				7F5D5148167E38AF00F02267 /* ww2_bkgdloop_01.aif in Resources */,
+				7F5D5149167E38AF00F02267 /* ww2_bkgdloop_02.aif in Resources */,
+				7F5D514A167E38AF00F02267 /* ww2_bkgdloop_03.aif in Resources */,
+				7F5D514B167E38AF00F02267 /* ww2_bkgdloop_04.aif in Resources */,
+				7F5D514C167E38AF00F02267 /* ww2_hit_01.aif in Resources */,
+				7F5D514D167E38AF00F02267 /* ww2_hit_02.aif in Resources */,
+				7F5D514E167E38AF00F02267 /* ww2_hit_03.aif in Resources */,
+				7F5D514F167E38AF00F02267 /* ww2_hit_04.aif in Resources */,
+				7F5D5150167E38AF00F02267 /* ww2_hit_05.aif in Resources */,
+				7F5D5151167E38AF00F02267 /* ww2_hit_06.aif in Resources */,
+				7F5D5152167E38AF00F02267 /* ww2_hit_07.aif in Resources */,
+				7F5D5153167E38AF00F02267 /* ww2_hit_08.aif in Resources */,
+				7F5D5154167E38AF00F02267 /* ww2_hit_09.aif in Resources */,
+				7F5D5155167E38AF00F02267 /* ww2_hit_10.aif in Resources */,
+				7F5D5156167E38AF00F02267 /* ww2_hit_11.aif in Resources */,
+				7F5D5157167E38AF00F02267 /* ww2_hit_12.aif in Resources */,
+				7F5D5158167E38AF00F02267 /* ww2_hit_13.aif in Resources */,
+				7F5D5159167E38AF00F02267 /* ww2_hit_14.aif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

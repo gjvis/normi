@@ -18,10 +18,16 @@
     int inputMonitorBufferIndex;
     float hitTriggerInputThreshold;
     bool playLocked;
+    bool loopsOn;
+    NSMutableAttributedString *loopsOnString;
+    NSMutableAttributedString *loopsOffString;
     
     IBOutlet UIProgressView *inputLevelDisplay;
     IBOutlet UISlider *hitTriggerThresholdSlider;
     IBOutlet UILabel *hitTriggerThresholdDisplay;
+    IBOutlet UILabel *inputLevelValue;
+    IBOutlet UITextView *logView;
+    IBOutlet UIButton *loopToggleButton;
 }
 
 @property NormiSoundBank *soundBank;

@@ -249,7 +249,7 @@ static OSStatus recordingInputRenderCallback (
                              inNumberFrames,
                              inputData);
     
-    normi.inputLevel =  getMeanVolumeSint16(inputData->mBuffers[0].mData, inNumberFrames);
+    normi.inputLevel = getMeanVolumeSint16(inputData->mBuffers[0].mData, inNumberFrames);
     
 //    // These values should be in a more conventional location for a bunch of preprocessor defines in your real code
 //#define DBOFFSET 0
@@ -637,7 +637,7 @@ void audioRouteChangeListenerCallback (
                                       );
     
     if (noErr != result) {[self printErrorMessage: "Couldn't set stream format on ioUnit recording output" withStatus:result]; return;}
-    
+        
     //............................................................................
     // Obtain the mixer unit instance from its corresponding node.
     
@@ -1194,8 +1194,8 @@ void audioRouteChangeListenerCallback (
 	inputBuffer->mNumberBuffers = 1;
 	inputBuffer->mBuffers[0].mNumberChannels = 1;
     
-	inputBuffer->mBuffers[0].mDataByteSize = 512*bytesPerSample;
-	inputBuffer->mBuffers[0].mData = calloc(512, bytesPerSample);
+	inputBuffer->mBuffers[0].mDataByteSize = 1024*bytesPerSample;
+	inputBuffer->mBuffers[0].mData = calloc(1024, bytesPerSample);
 }
 
 @end
