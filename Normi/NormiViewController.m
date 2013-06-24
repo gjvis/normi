@@ -50,6 +50,8 @@ static float getAverage(float *buffer, int length)
         inputMonitorBufferIndex = 0;
         playLocked = false;
         hitTriggerInputThreshold = 0.5f;
+        loopsOn = false;
+        panicOn = true;
         
         soundBank = [[NormiSoundBank alloc] init];
         
@@ -62,7 +64,7 @@ static float getAverage(float *buffer, int length)
         //-----------------------------
         // Create attributed string
         //-----------------------------
-        NSString *str = @"Background Loop";
+        NSString *str = @"Background";
         loopsOnString = [[NSMutableAttributedString alloc] initWithString:str];
         loopsOffString = [[NSMutableAttributedString alloc] initWithString:str];
         
@@ -83,6 +85,9 @@ static float getAverage(float *buffer, int length)
         [loopsOffString addAttribute:NSStrikethroughStyleAttributeName
                                  value:[NSNumber numberWithInt:2]
                                  range:NSMakeRange(0, [loopsOffString length])];
+        
+        dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"HH:mm:ss.SSS"];
     }
     
     return self;
@@ -111,52 +116,19 @@ static float getAverage(float *buffer, int length)
     if (inputLevel > hitTriggerInputThreshold) {
         if (!playLocked) {
             playLocked = true;
-            NSLog(@"Play locked at %2.0f", inputLevel*100);
-            logView.text = [[NSString stringWithFormat:@"Play locked at %2.0f\n", inputLevel*100]
-                            stringByAppendingString: logView.text];
+//            NSLog(@"Play locked at %2.0f", inputLevel*100);
+            logView.text = [[NSString stringWithFormat:@"%@ | %2.0f | locked\n", [dateFormat stringFromDate: [NSDate date]], inputLevel*100]
+                               stringByAppendingString: logView.text];
             [soundBank playRandomHit];
         }
     } else {
         if (playLocked) {
-            NSLog(@"Play unlocked");
+//            NSLog(@"Play unlocked at %2.0f", inputLevel*100);
             playLocked = false;
-            logView.text = [@"Play unlocked\n" stringByAppendingString: logView.text];
+            logView.text = [[NSString stringWithFormat:@"%@ | %2.0f | unlocked\n",  [dateFormat stringFromDate: [NSDate date]], inputLevel*100]
+                               stringByAppendingString: logView.text];
         }
     }
-    
-//
-//    
-//    inputMonitorBuffer[inputMonitorBufferIndex] = inputLevel;
-//        
-//    float longTermAverage = getAverage(inputMonitorBuffer, inputMonitorBufferLength);
-//    
-//    float shortTermAverage = getAverageFromIndex(inputMonitorBuffer, inputMonitorBufferLength, inputMonitorBufferIndex, 200/kInputMonitorSampleRate);
-//    
-//    float peakRatio = shortTermAverage/longTermAverage;
-//    
-//    NSLog(@"%f : %f | %f" , longTermAverage, shortTermAverage, peakRatio);
-//    
-//    return;
-//    
-//    if (peakRatio > 3)
-//    {
-//        if (!playLocked) {
-//            NSLog(@"Play locked at %f", peakRatio);
-//            playLocked = true;
-//            [soundBank playRandomHit];
-//        } else {
-//            NSLog(@"Play unlocked");
-//            playLocked = false;
-//        }
-//            
-//    }
-//    
-//    inputMonitorBufferIndex++;
-//    
-//    if (inputMonitorBufferIndex >= inputMonitorBufferLength)
-//    {
-//        inputMonitorBufferIndex = 0;
-//    }
 }
 
 -(IBAction)playSample:(UIButton *)sender
@@ -180,6 +152,16 @@ static float getAverage(float *buffer, int length)
 {
     hitTriggerInputThreshold = sender.value;
     hitTriggerThresholdDisplay.text = [NSString stringWithFormat: @"%2.0f", hitTriggerInputThreshold*100];
+}
+
+-(IBAction)panic:(UIButton *)sender
+{
+    panicOn = !panicOn;
+    if (panicOn) {
+        [soundBank stop];        
+    } else {
+        [soundBank start];
+    }
 }
 
 @end

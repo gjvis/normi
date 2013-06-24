@@ -19,5 +19,7 @@
 
 -(void)playRandomHit;
 -(void)toggleLoops;
+-(void)start;
+-(void)stop;
 
 @end

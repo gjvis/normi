@@ -19,6 +19,7 @@
     float hitTriggerInputThreshold;
     bool playLocked;
     bool loopsOn;
+    bool panicOn;
     NSMutableAttributedString *loopsOnString;
     NSMutableAttributedString *loopsOffString;
     
@@ -28,13 +29,16 @@
     IBOutlet UILabel *inputLevelValue;
     IBOutlet UITextView *logView;
     IBOutlet UIButton *loopToggleButton;
+    
+    NSDateFormatter *dateFormat;
 }
 
 @property NormiSoundBank *soundBank;
 
 -(IBAction)playSample:(UIButton *)sender;
 -(IBAction)toggleLoops:(UIButton *)sender;
--(IBAction) hitTriggerInputThresholdChanged: (UISlider *)sender;
+-(IBAction)hitTriggerInputThresholdChanged: (UISlider *)sender;
+-(IBAction)panic:(UIButton *)sender;
 
 - (void) updateInputDisplay: (NSTimer *) timer;
 

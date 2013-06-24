@@ -45,7 +45,7 @@
         
         [playback loadHits:hits];
         [playback loadLoops:loops];
-        [playback startAUGraph];
+//        [self start];
     }
     
     return self;
@@ -80,6 +80,16 @@
     }
     
     return sampleURL;
+}
+
+-(void)start
+{
+    [playback startAUGraph];
+}
+
+-(void)stop
+{
+    [playback stopAUGraph];
 }
 
 @end
